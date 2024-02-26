@@ -14,11 +14,13 @@ pipeline {
         }
         stage('Build') {
             steps {
+                // Remove 'nohup' if it's not necessary
                 sh 'mvn -B package --file pom.xml'
             }
         }
         stage('Test') {
             steps {
+                // Remove 'nohup' if it's not necessary
                 sh 'mvn test'
             }
         }
